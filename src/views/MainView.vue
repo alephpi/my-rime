@@ -1,8 +1,10 @@
 <script setup lang="ts">
-import { ref, computed, watch,
+import {
+  ref, computed, watch
   // defineAsyncComponent
 } from 'vue'
-import { NInput, NSpace, NButtonGroup, 
+import {
+  NInput, NSpace, NButtonGroup
 // NSwitch
 } from 'naive-ui'
 import { Cut20Regular, Copy20Regular, ClipboardLink20Regular } from '@vicons/fluent'
