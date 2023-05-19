@@ -1,26 +1,31 @@
 <script setup lang="ts">
 import { ref, computed, watchEffect } from 'vue'
-import { NButton, NButtonGroup, NIcon, NSpace, NSelect } from 'naive-ui'
-import { WeatherMoon16Regular, Circle16Regular } from '@vicons/fluent'
+import {
+  // NButton,
+  // NButtonGroup,
+  // NIcon,
+  NSpace, NSelect
+} from 'naive-ui'
+// import { WeatherMoon16Regular, Circle16Regular } from '@vicons/fluent'
 import {
   init,
   deployed,
   schemaId,
   selectOptions,
-  variants,
+  // variants,
   variant,
-  isEnglish,
-  isFullWidth,
-  isExtendedCharset,
-  isEnglishPunctuation,
-  enableEmoji,
-  schemaExtended,
-  changeLanguage,
-  changeVariant,
-  changeWidth,
-  changeCharset,
-  changePunctuation,
-  changeEmoji,
+  // isEnglish,
+  // isFullWidth,
+  // isExtendedCharset,
+  // isEnglishPunctuation,
+  // enableEmoji,
+  // schemaExtended,
+  // changeLanguage,
+  // changeVariant,
+  // changeWidth,
+  // changeCharset,
+  // changePunctuation,
+  // changeEmoji,
   changeIME
 } from '../control'
 import { getTextarea, getQueryString } from '../util'
@@ -45,7 +50,7 @@ init(getQueryString('schemaId'), getQueryString('variantName')).then(() => {
 })
 
 const variantLabel = computed(() => showVariant.value && !deployed.value ? variant.value.name : '')
-const singleVariant = computed(() => variants.value.length === 1)
+// const singleVariant = computed(() => variants.value.length === 1)
 
 watchEffect(() => {
   localStorage.setItem('schemaId', ime.value)
@@ -63,13 +68,13 @@ async function selectIME (targetIME: string) {
   setLoading(false)
 }
 
-async function switchVariant () {
-  showVariant.value = false
-  await changeVariant()
-  showVariant.value = true
-}
+// async function switchVariant () {
+//   showVariant.value = false
+//   await changeVariant()
+//   showVariant.value = true
+// }
 
-const extendedDisabled = computed(() => ime.value !== schemaId.value || !schemaExtended.includes(ime.value))
+// const extendedDisabled = computed(() => ime.value !== schemaId.value || !schemaExtended.includes(ime.value))
 
 const props = defineProps<{
   textareaSelector: string
@@ -95,7 +100,7 @@ defineExpose({
       :loading="loading"
       @update:value="selectIME"
     />
-    <n-button-group
+    <!-- <n-button-group
       class="square-group"
       @click="resetFocus"
     >
@@ -140,6 +145,6 @@ defineExpose({
       >
         {{ enableEmoji ? '😀' : '🚫' }}
       </n-button>
-    </n-button-group>
+    </n-button-group> -->
   </n-space>
 </template>

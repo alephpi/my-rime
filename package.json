@@ -4,11 +4,12 @@
   "files": [
     "dist"
   ],
-  "homepage": "https://github.com/LibreService/my_rime",
+  "homepage": "https://github.com/alephpi/JumpType",
+  "repopage": "https://github.com/alephpi/my-rime",
   "author": {
-    "name": "Qijia Liu",
-    "email": "liumeo@pku.edu.cn",
-    "url": "https://github.com/eagleoflqj"
+    "name": "alephpi",
+    "email": "maosicheng98@gmail.com",
+    "url": "https://github.com/alephpi"
   },
   "license": "AGPL-3.0-or-later",
   "scripts": {

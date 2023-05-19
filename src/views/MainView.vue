@@ -1,11 +1,15 @@
 <script setup lang="ts">
-import { ref, computed, watch, defineAsyncComponent } from 'vue'
-import { NInput, NSpace, NButtonGroup, NButton, NIcon, NSwitch } from 'naive-ui'
+import { ref, computed, watch,
+  // defineAsyncComponent
+} from 'vue'
+import { NInput, NSpace, NButtonGroup, 
+// NSwitch
+} from 'naive-ui'
 import { Cut20Regular, Copy20Regular, ClipboardLink20Regular } from '@vicons/fluent'
 import MyMenu from '../components/MyMenu.vue'
 import MyPanel from '../components/MyPanel.vue'
 import type MySimulator from '../components/MySimulator.vue'
-import type MyEditor from '../components/MyEditor.vue'
+// import type MyEditor from '../components/MyEditor.vue'
 import { getTextarea, getQueryString, isMobile } from '../util'
 import { schemaId, variant } from '../control'
 
@@ -55,7 +59,7 @@ async function copyLink () {
 const menu = ref<InstanceType<typeof MyMenu>>()
 const panel = ref<InstanceType<typeof MyPanel>>()
 const simulator = ref<InstanceType<typeof MySimulator>>()
-const editor = ref<InstanceType<typeof MyEditor>>()
+// const editor = ref<InstanceType<typeof MyEditor>>()
 
 const advancedLoaded = ref<boolean>(Boolean(getQueryString('debug')))
 const showAdvanced = ref<boolean>(advancedLoaded.value)
@@ -68,13 +72,13 @@ watch(showEditor, (newValue: boolean) => {
   }
 })
 
-function toggleAdvanced (newValue: boolean) {
-  advancedLoaded.value = true
-  showAdvanced.value = newValue
-}
+// function toggleAdvanced (newValue: boolean) {
+//   advancedLoaded.value = true
+//   showAdvanced.value = newValue
+// }
 
-const AsyncSimulator = defineAsyncComponent(() => import('../components/MySimulator.vue'))
-const AsyncEditor = defineAsyncComponent(() => import('../components/MyEditor.vue'))
+// const AsyncSimulator = defineAsyncComponent(() => import('../components/MySimulator.vue'))
+// const AsyncEditor = defineAsyncComponent(() => import('../components/MyEditor.vue'))
 </script>
 
 <template>
@@ -124,7 +128,7 @@ const AsyncEditor = defineAsyncComponent(() => import('../components/MyEditor.vu
       :debug-mode="simulator?.debugMode"
       :on-update-schema="menu?.selectIME"
     />
-    <n-space>
+    <!-- <n-space>
       Advanced
       <n-switch
         :value="showAdvanced"
@@ -144,7 +148,7 @@ const AsyncEditor = defineAsyncComponent(() => import('../components/MyEditor.vu
       v-show="showEditor"
       ref="editor"
       :menu="menu"
-    />
+    /> -->
   </n-space>
 </template>
 
