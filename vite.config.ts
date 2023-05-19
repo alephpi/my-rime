@@ -5,7 +5,7 @@ import replace from '@rollup/plugin-replace'
 import { run } from 'vite-plugin-run'
 import { VitePWA, VitePWAOptions } from 'vite-plugin-pwa'
 
-const resources = ['rime.data', 'rime.js', 'rime.wasm', 'HanaMinB.woff2']
+const resources = ['rime.data', 'rime.js', 'rime.wasm']
 
 const workbox: VitePWAOptions["workbox"] = {
   maximumFileSizeToCacheInBytes: 13631488,
