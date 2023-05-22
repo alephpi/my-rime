@@ -4,5 +4,12 @@
     "name": "Jump Type",
     "target": "alephpi/JumpType",
     "license": "MIT"
+  },
+  {
+    "id": "sauter_taper",
+    "name": "Sauter Taper",
+    "target": "alephpi/SauterTaper",
+    "license": "MIT"
   }
+
 ]
